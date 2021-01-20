@@ -7,11 +7,16 @@ To do list is a practical organizing tool for all types of users. For common use
 
 This system is provisioned to be built on the .NET Classes which is highly ﬂexible . 
 
-Minimum System Requirement 
+Minimum System Requirements:
 
 • Processor: Intel Pentium 4 2.0GHz / AMD Athlon XP 2500+ 
+
 • RAM: 512MB 
+
 • OS: Windows XP
+
 • 3D: No
+
 • Microphone: YES 
+
 • Installed at least .NET Framework 3.50
