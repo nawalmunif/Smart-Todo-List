@@ -1,0 +1,43 @@
+﻿<Page
+    x:Class="SmartToDoList.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SmartToDoList"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid BorderBrush="#FF15191E" Margin="0,-3,0,0">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="#FFDFE4F2" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Image HorizontalAlignment="Center" Height="346" Margin="0,135,0,0" VerticalAlignment="Top" Width="1273" Source="Assets/front.jpg" Stretch="UniformToFill" Opacity="0.5">
+            <Image.FocusVisualPrimaryBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFE2CFCF" Offset="1"/>
+                </LinearGradientBrush>
+            </Image.FocusVisualPrimaryBrush>
+        </Image>
+        <TextBlock HorizontalAlignment="Left" Height="179" Margin="155,256,0,0" Text="Smart to-Do List" TextWrapping="Wrap" VerticalAlignment="Top" Width="944" FontFamily="Algerian" FontWeight="Bold" FontSize="72" TextAlignment="Center"/>
+        <Button Content="Get Started!" Height="68" Margin="453,539,0,0" VerticalAlignment="Top" Width="286" Background="White" FontSize="36" FontFamily="Arial Rounded MT Bold" FontStyle="Italic" FontWeight="Bold" BorderBrush="#FF160505" FontStretch="ExtraCondensed" Click="Button_Click" BorderThickness="5,5,5,5" >
+            <Button.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF3B1B1B" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Foreground>
+            <Button.FocusVisualPrimaryBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFAA8E8E" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.FocusVisualPrimaryBrush>
+        </Button>
+
+    </Grid>
+</Page>

@@ -1,0 +1,43 @@
+﻿<Page
+    x:Class="SmartToDoList.IncompleteTask"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SmartToDoList"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Width="1236">
+
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <RelativePanel Grid.ColumnSpan="2" Margin="70 70">
+            <TextBlock Name="HeaderYourTasks" Text="Pending Tasks" FontWeight="ExtraBlack" FontFamily="{ThemeResource PivotTitleFontFamily}" FontSize="46" RelativePanel.AlignHorizontalCenterWithPanel="True" Foreground="White" />
+
+            <ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Hidden"  Height="Auto" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="HeaderYourTasks">
+                <ListBox Width="500" Margin="10,10,10,100" x:Name="PendingTaskList" ItemsSource="{Binding Products}" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" SelectionChanged="InCompleteList_SelectionChanged">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+
+                            <StackPanel>
+
+                                <!-- <RadioButton Name="ButtonClicked" GroupName="task_btn_id" Content="{Binding}"  /> -->
+                                <TextBlock Text="{Binding}" FontSize="24"></TextBlock>
+                            </StackPanel>
+
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </ScrollViewer>
+        </RelativePanel>
+        <CommandBar  Grid.ColumnSpan="2" DefaultLabelPosition="Right" Height="46" Margin="0,-6,4,0">
+
+            <AppBarToggleButton Icon="Home" Label="Home" Click="BackfromIncomplete"/>
+        </CommandBar>
+        <Image Height="907" Margin="-718,258,-741,0" VerticalAlignment="Top" Source="/Assets/incomplete.jpg" Opacity="0.25" IsAccessKeyScope="True" Visibility="Visible" AllowDrop="True" AutomationProperties.IsPeripheral="True" AutomationProperties.IsRequiredForForm="True" CanBeScrollAnchor="True" CanDrag="True" Grid.ColumnSpan="2" />
+
+    </Grid>
+</Page>

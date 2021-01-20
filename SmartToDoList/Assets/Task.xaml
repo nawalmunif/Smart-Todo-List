@@ -1,0 +1,46 @@
+﻿<Page
+    x:Class="SmartToDoList.Task"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SmartToDoList"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/> 
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <TextBox PlaceholderText="Enter Task" Text="{Binding NewTaskName}" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" ></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Command="{Binding CreatingTask}" 
+                        CommandParameter="{Binding}"
+                        Grid.Column="1" Content="Add Task" HorizontalAlignment="Stretch" ></Button>
+            </Grid>
+            
+        </StackPanel>
+        <StackPanel Grid.Column="1" Margin="45,74,0,0">
+            <ItemsControl ItemsSource="{Binding Tasks}" Height="159">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <RadioButton IsChecked="{Binding IsComplete, Mode=TwoWay}" Content="{Binding TaskName}"></RadioButton>
+                            
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
+
+    </Grid>
+    
+</Page>
